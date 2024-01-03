@@ -1,0 +1,38 @@
+
+
+ p
+ {color:green;
+  background:purple;
+
+ }
+
+ img{color:green;}
+
+ div{color: green;}
+
+ a{color: green;}
+ 
+ h1{color: green;}
+
+ #primotitolo {color: green;}
+
+ .primaclasse{color: green;}
+
+ .testoverde.sfondorosa {color: green;}
+
+ h1.primaclasse{color: green;}
+ h1#primotitolo{ color: green;}
+
+ div.contenitore p.primaclasse {color: green;}
+
+ h1, .testoverde, div.sfondorosa {color: green;}
+
+
+
+ h1{color: white;}
+ h1{color: black;}
+
+ h1 {
+  color: white;
+  color: black;
+ }
