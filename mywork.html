@@ -46,7 +46,7 @@
 
   <div id="footer-form">
     <h2>Contact me</h2>
-    <form action="submit.php" method="post">
+    <form id="emailForm" action="submit.php" method="post">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" required>
 
@@ -58,8 +58,28 @@
 
         <input type="submit" value="Invia">
     </form>
+    
 </div>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // Inizializza EmailJS
+        (function(){
+            emailjs.init("Dq73QHusg2xMXs319"); // Sostituisci con il tuo User ID di EmailJS
+        })();
+    </script>
+<script>
+        // Quando il form viene inviato, invia un'email con EmailJS
+        document.getElementById('emailForm').addEventListener('submit', function(event) {
+            event.preventDefault();
 
+            // Invia un'email con EmailJS
+            emailjs.sendForm ('service_rd0jlfu', 'template_2o9qcrh', '#emailForm').then(function(response) {
+    console.log('SUCCESS!', response.status, response.text);
+  }, function(error) {
+    console.log('FAILED...', error);
+  }); // Sostituisci con il tuo Service ID e Template ID di EmailJS 
+                 } )
+          </script> 
   <footer>
     © 2024 Alessandro Smajlovic
 </footer>
