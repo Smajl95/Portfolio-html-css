@@ -13,9 +13,7 @@
   
   <div id="contenitore-supremo">
     <div id="testata">
-
-      <h1 class="dentro-testata" >My Work</h1>
-    
+      <h1 class="dentro-testata">My Work</h1>
       <p class="dentro-testata">Junior Data Analyst</p>
       <header>
         <nav>
@@ -30,18 +28,12 @@
     
     <div id="piedipagina">
       <h2 class="dentro-contenuto"></h2>
-    
       <p class="dentro-piedipagina">This is the result of my work as long as I explore the world of datas.</p>
       <a href="https://github.com/Smajl95/DataProjects" target="_blank">
         <img src="img/favicon-32x32 github.ico" alt="Favicon GitHub">
         GitHubRepo
-    </a>
-
-    
-      
-     
-      
-      </div>
+      </a>
+    </div>
   </div>
 
   <div id="footer-form">
@@ -58,36 +50,39 @@
 
         <input type="submit" value="Invia">
     </form>
-
+    
     <!-- Aggiunta la notifica qui -->
     <div id="emailSentNotification" style="display:none; color:#ff6978; text-align:center; margin-top:20px;">
-      Email inviata con successo!
-  </div>
+        Email inviata con successo!
+    </div>
     
-</div>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script>
-        // Inizializza EmailJS
-        (function(){
-            emailjs.init("Dq73QHusg2xMXs319"); // Sostituisci con il tuo User ID di EmailJS
-        })();
-    </script>
-<script>
-        // Quando il form viene inviato, invia un'email con EmailJS
-        document.getElementById('emailForm').addEventListener('submit', function(event) {
-            event.preventDefault();
+  </div>
 
-            // Invia un'email con EmailJS
-            emailjs.sendForm ('service_rd0jlfu', 'template_2o9qcrh', '#emailForm').then(function(response) {
-    console.log('SUCCESS!', response.status, response.text);
-  }, function(error) {
-    console.log('FAILED...', error);
-  }); // Sostituisci con il tuo Service ID e Template ID di EmailJS 
-                 } )
-          </script> 
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+      // Inizializza EmailJS
+      (function(){
+          emailjs.init("Dq73QHusg2xMXs319");
+      })();
+  </script>
+  <script>
+      // Quando il form viene inviato, invia un'email con EmailJS
+      document.getElementById('emailForm').addEventListener('submit', function(event) {
+          event.preventDefault();
+          emailjs.sendForm('service_rd0jlfu', 'template_2o9qcrh', '#emailForm').then(function(response) {
+              console.log('SUCCESS!', response.status, response.text);
+              // Mostra la notifica
+              document.getElementById('emailSentNotification').style.display = 'block';
+          }, function(error) {
+              console.log('FAILED...', error);
+          });
+      });
+  </script>
+
   <footer>
     © 2024 Alessandro Smajlovic
-</footer>
+  </footer>
 
 </body>
 </html>
+
